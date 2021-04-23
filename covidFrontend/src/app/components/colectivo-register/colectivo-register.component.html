@@ -1,0 +1,41 @@
+<h3>Añadir Resultado Clinico</h3>
+<div class="container-fluid">
+    <div class="row">
+    
+        <div class="col">
+          
+  <form [formGroup]="registroFormulario" (ngSubmit)="addColectivo()">
+    <br>
+    <div>
+  <label>Nombre:</label>
+  <input formControlName="nombre" type="text" placeholder="Nombre colectivo" />
+  <div class="alert alert-info" *ngIf="registroFormulario.get('nombre').hasError('required') && registroFormulario.get('nombre').touched">
+      <strong>Info!</strong> Nombre obligatorio.
+    </div>
+  </div>
+
+
+  <label>Descripcion:</label>
+  <input formControlName="desc" type="text" placeholder="Descripcion del colectivo" />
+   <div class="alert alert-info" *ngIf="registroFormulario.get('desc').hasError('required') && registroFormulario.get('desc').touched">
+      <strong>Info!</strong> Obligatorio un colectivo.
+    </div>
+  <br>
+
+  <label>Vacuna:</label>
+  <input formControlName="vacuna" type="text" placeholder="Tipo de vacuna" />
+   <div class="alert alert-info" *ngIf="registroFormulario.get('vacuna').hasError('required') && registroFormulario.get('vacuna').touched">
+      <strong>Info!</strong> Obligatorio poner el tipo de vacuna.
+    </div>
+  <br>
+
+
+
+
+
+  <button [disabled]="registroFormulario.invalid" class="btn btn-primary" type="submit" >Añadir Colectivo</button>
+</form> 
+<label>{{notificationRegist}}</label>
+        </div>
+    </div>
+</div>

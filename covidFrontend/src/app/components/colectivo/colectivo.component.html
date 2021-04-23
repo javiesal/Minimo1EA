@@ -1,0 +1,24 @@
+<div class="row">
+    <!-- Lista de colectivos-->
+  <div class="col">
+    <h2>Resultados Clínicos</h2>
+      <div class="btn-group">
+          <button (click)="getAllColectivo()" class="btn btn-outline-info"> Resultados Clínicos</button>  
+      </div>
+      <p> </p>
+    <h5>Listado:</h5>
+    <div class="container">
+        <ul class="list-group" *ngFor = "let colectivo of allColectivo">
+            <li class="list-group-item d-flex justify-content-between align-items-center" >
+                <a  (click)="delColectivo(Colectivo._id)"class="list-group-item list-group-item-action">{{Colectivo.nombre}} (Click para eliminar) </a>
+                <div class="container">
+                  <label>- Nombre: {{Colectivo.nombre}}</label>
+                  <label>- Descripcion: {{Colectivo.descripcion}}</label>
+                  <label>- Vacuna: {{Colectivo.vacuna}}</label>
+                </div>
+          
+            </li>
+        </ul>
+    </div> 
+  </div>
+</div>
